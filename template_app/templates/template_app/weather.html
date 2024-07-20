@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Weather Report</h1>
+
+    <!-- Jinja Syntax -->
+     
+     <h3><br>Berlin : Temperature: {{Berlin.temperature}}     Humidity: {{Berlin.humidity}}    Condition : {{Berlin.condition}}</h3>
+     <h3><br>Paris : Temperature: {{Paris.temperature}}     Humidity: {{Paris.humidity}}    Condition : {{Paris.condition}}</h3>
+     <h3><br>London : Temperature: {{London.temperature}}     Humidity: {{London.humidity}}    Condition : {{London.condition}}</h3>
+     <h3><br>New York : Temperature: {{NewYork.temperature}}     Humidity: {{NewYork.humidity}}    Condition : {{NewYork.condition}}</h3>
+     <h3><br>Tokyo : Temperature: {{Tokyo.temperature}}     Humidity: {{Tokyo.humidity}}    Condition : {{Tokyo.condition}}</h3>
+     <h3><br>Sydney : Temperature: {{Sydney.temperature}}     Humidity: {{Sydney.humidity}}    Condition : {{Sydney.condition}}</h3>
+     <h3><br>Istanbul : Temperature: {{Istanbul.temperature}}     Humidity: {{Istanbul.humidity}}    Condition : {{Istanbul.condition}}</h3>
+     <h3><br>Moscow : Temperature: {{Moscow.temperature}}     Humidity: {{Moscow.humidity}}    Condition : {{Moscow.condition}}</h3>
+     <h3><br>Beijing : Temperature: {{Beijing.temperature}}     Humidity: {{Beijing.humidity}}    Condition : {{Beijing.condition}}</h3>
+     <h3><br>Delhi : Temperature: {{Delhi.temperature}}     Humidity: {{Delhi.humidity}}    Condition : {{Delhi.condition}}</h3>
+
+     <!-- Jinja for loop -->
+     <h3><br> Delhi : {% for key,values in Delhi.items  %}
+        {{key}} : {{values}}
+        {% endfor %}
+    </h3>
+
+    <!-- Jinja if/else -->
+     {% if user_premium %} <!-- user_premium = True-->
+     <h3><br> Paris : {% for key,values in Paris.items  %}
+        {{key}} : {{values}}
+        {% endfor %}
+    </h3>
+     {% endif %}
+    <br>
+
+    <!-- Jinja Filter -->
+      <h2> {{username | upper}} </h2>
+      <h2> {{username | lower}} </h2>
+
+    <!-- Jinja URL 
+     <h2><a href="{% url 'template_app:MainPage' %}">Go To Index</a></h2> -->
+{% endblock content %}
+
